@@ -4,15 +4,6 @@ A production-style local Formula 1 analytics MVP built with real historical Fast
 
 The platform can ingest real sessions, cache processed artifacts, render a deterministic 2D replay from FastF1 position data, expose telemetry and leaderboard APIs, and serve a saved XGBoost final-position predictor in the browser.
 
-## Reference Repos Combined
-
-This project intentionally blends two reference ideas:
-
-- Replay experience from [`IAmTomShaw/f1-race-replay`](https://github.com/IAmTomShaw/f1-race-replay): smooth 2D track replay, synced leaderboard, colored race-status progress bar, selected-driver pit-wall telemetry, and throttle/brake pedal meters.
-- Prediction approach from [`AnanmayS/F1-RacePrediction-Model`](https://github.com/AnanmayS/F1-RacePrediction-Model): XGBoost final-position regression, scaled driver-race features, realistic post-processing constraints, rookie handling, driver/team form features, and full predicted final grid output.
-
-The implementation is not a direct copy of either repo. It reworks those ideas into a full-stack FastAPI/React/FastF1 product with persistent artifacts, Docker Compose, API schemas, tests, and resume-ready documentation.
-
 ## How To Run
 
 ```bash
