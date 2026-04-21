@@ -229,28 +229,6 @@ docker compose build --no-cache backend
 docker compose up
 ```
 
-## Known Limitations
-
-- Initial ingestion depends on FastF1 downloading public historical timing data, so first runs can take several minutes.
-- Historical telemetry coverage is strongest from 2018 onward, but individual channels can still be missing.
-- The current target is exact finishing position, but future race predictions still rely on current-lineup priors, historical pace/form, and estimated race-specific grids when confirmed future grid data is unavailable.
-- The predicted final order is a constrained ML projection, not a direct simulator of race incidents, DNFs, penalties, or strategy.
-- The model is only as strong as the ingested local dataset. Ingest multiple seasons before treating metrics as meaningful.
-- Safety car and yellow-flag features are represented only indirectly in this MVP; the pipeline is structured so richer race-control features can be added later.
-
-## Future Improvements
-
-- Add qualifying-session ingestion and join qualifying pace into race features.
-- Add race-control message parsing for safety car, VSC, and yellow-flag features.
-- Store artifacts in DuckDB or Postgres for larger multi-season datasets.
-- Add SHAP explanations for per-driver prediction cards.
-- Add user-created replay bookmarks and lap comparison overlays.
-- Add CI with backend tests, frontend build, and Docker smoke checks.
-
-## What To Say In Interviews
-
-This project demonstrates a full real-data ML product loop: public motorsport data ingestion, local caching, reproducible pre-race feature engineering, race-grouped model evaluation, a FastAPI service layer, and a polished React analytics UI. The model is intentionally future-facing and rejects completed races at prediction time. The main replay tradeoff is that it uses real FastF1 position samples bucketed into deterministic frames because historical streams are not perfectly synchronized.
-
 ## Resume Bullets
 
 - Built a Dockerized full-stack Formula 1 analytics platform using FastF1, FastAPI, React, and SQLite to ingest, cache, and serve real historical race telemetry, lap, weather, and result data.
