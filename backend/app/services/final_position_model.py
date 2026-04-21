@@ -21,12 +21,10 @@ class PredictionFrame:
 
 
 class F1FinalPositionRegressor:
-    """XGBoost final-position model adapted from the user's race prediction repo.
+    """XGBoost model for predicting exact finishing positions.
 
-    The original project predicts exact finishing position with XGBRegressor,
-    scales numeric performance features, then sorts each race into a final grid.
-    This version keeps that behavior while adding median filling and grouped
-    evaluation hooks so it fits this FastAPI/FastF1 monorepo cleanly.
+    The model scales numeric performance features, fills missing values with
+    training medians, and sorts each race into a constrained final grid.
     """
 
     def __init__(self, feature_names: list[str]) -> None:

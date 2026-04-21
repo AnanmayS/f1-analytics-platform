@@ -372,10 +372,9 @@ class FeatureBuilder:
     def _race_performance_features(self, laps: pd.DataFrame) -> dict[str, dict[str, float | None]]:
         """Create race-level performance features from FastF1 lap artifacts.
 
-        This mirrors the modeling repo's approach: collapse noisy lap-level data
-        into one driver-race row with pace, consistency, tire, pit, and speed
-        signals. For future races, these same columns are populated from each
-        driver's latest completed race history.
+        This collapses noisy lap-level data into one driver-race row with pace,
+        consistency, tire, pit, and speed signals. For future races, these same
+        columns are populated from each driver's latest completed race history.
         """
 
         if laps.empty or "Driver" not in laps:
