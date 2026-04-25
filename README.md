@@ -1,4 +1,4 @@
-# F1 Analytics Platform
+# Formula 1 Telemetry Analytics Platform
 
 A local Formula 1 analytics app built with FastAPI, React, FastF1, and XGBoost.
 
