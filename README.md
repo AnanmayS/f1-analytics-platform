@@ -4,6 +4,28 @@ A local Formula 1 analytics app built with FastAPI, React, FastF1, and XGBoost.
 
 The app can download real F1 session data, process it into replay and telemetry files, show an interactive race replay, and generate simple future-race finishing order predictions from locally trained model artifacts.
 
+## Screenshots
+
+Session view with season, event, and session selectors, summary stats, and results table after loading ingested data.
+
+![Session overview with leaderboard and stats](docs/screenshots/session-overview.png)
+
+Interactive race replay: circuit map, live-style leaderboard, weather, top three, and playback controls.
+
+![Race replay with track map and leaderboard](docs/screenshots/race-replay.png)
+
+Per-driver telemetry (throttle, brake, speed, gear, tires) with a time-synced leaderboard for the selected lap.
+
+![Driver telemetry and synced leaderboard](docs/screenshots/telemetry-leaderboard.png)
+
+Qualifying replay with sector-colored trace, driver-focused telemetry, and Q1–Q3 times.
+
+![Qualifying session replay](docs/screenshots/qualifying-replay.png)
+
+Model tab: predict final finishing order for a chosen Grand Prix with confidence bars.
+
+![Race predictor model results](docs/screenshots/race-predictor.png)
+
 ## Features
 
 - FastAPI backend for F1 session, replay, telemetry, ingest, and model endpoints
